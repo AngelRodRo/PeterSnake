@@ -7,9 +7,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var cookieSession = require('cookie-session')
+var jwt = require('jsonwebtoken');
 var app = express();
+var config = require('./config/secret');
 
+app.use(cookieSession({
+  name: 'session',
+  keys: [""],
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -20,6 +27,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(function (req,res,next) {
+  var token = req.session.token;
+  jwt.verify(token,config.secret,function (err,decoded) {
+    if(err) return next();
+    res.locals.user = decoded;
+    return next();
+  })
+})
+
 
 app.use('/', routes);
 app.use('/users', users);
