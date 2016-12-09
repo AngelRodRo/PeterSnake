@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+      header
+      .contenedor
+        nav.menu
+          ul.menu_info
+            a
+              img(src='img/img_logo.png')
+            .subtitles
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                span.subtitle Niveles del Juego :
+              .tabs
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_secuencial.html') 1
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_secuencial2.html') 2
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_repetitivo.html') 3
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_repetitivo2.html') 4
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_condicional.html') 5
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_condicional2.html') 6
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                li
+                  a.title(href='#') Salir
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                li
+                  a.title(href='#') Contacto
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                li
+                  a.title(href='#') Como Usar
+
+      block content
+        

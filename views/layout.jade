@@ -1,8 +1,64 @@
 doctype html
-html
+html(lang='es')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='./game-sources/styles/main.css', media='screen', title='no title', charset='utf-8')
+    link(rel='stylesheet', type='text/css', href='./game-sources/styles/diseño_interfaz.css')
+    link(rel='stylesheet', type='text/css', href='./game-sources/styles/diseño_interfaz.css')
+    link(rel='stylesheet', href='./game-sources/styles/modal_gana.css')
+    link(rel='stylesheet', href='./game-sources/styles/modal_gana.css')
+
+    link(rel='stylesheet', href='./game-sources/styles/modal_pierde.css')
+    
+    link(rel='stylesheet', href='./game-sources/styles/modal_secuencial.css')
+  
+    script(src='./game-sources/scripts/jquery-1.4.2.min.js')
+    
   body
+    header
+      .contenedor
+        nav.menu
+          ul.menu_info
+            a
+              img(src='./img/img_logo.png')
+            .subtitles
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                span.subtitle Niveles del Juego :
+              .tabs
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./principal') 1
+                  
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_secuencial2') 2
+               
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_repetitivo') 3
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_repetitivo2') 4
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_condicional') 5
+                font(color='Olive', face='Comic Sans MS,arial', size='6')
+                  li
+                    a.nivel(href='./snake_condicional2') 6
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                li
+                  a.title(href='/logout') Salir
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                li
+                  a.title(href='#') Contacto
+              font(color='Olive', face='Comic Sans MS,arial', size='5')
+                li
+                  a.title(href='#') Como Usar
     block content
-      p 
+          
+    script(src='./game-sources/scripts/jquery-1.10.1.min.js', type='text/javascript')
+    
+    script(src='./game-sources/scripts/snake_secuencial.js', type='text/javascript')
+  
+    script(src='./game-sources/scripts/drawndrop.js', type='text/javascript')
+  

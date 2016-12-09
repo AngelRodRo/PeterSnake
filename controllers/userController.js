@@ -51,6 +51,22 @@ module.exports.registerView = function (req,res) {
   return res.render('register');
 }
 
-module.exports.snake = function (req,res) {
-  return res.render('snake');
+// module.exports.snake = function (req,res) {
+//   return res.render('snake');
+// };
+module.exports.snake_s2 = function (req,res) {
+  return res.render('snake_secuencial2');
+};
+module.exports.snake_c1 = function (req,res) {
+  return res.render('snake_condicional');
+};
+module.exports.snake_c2 = function (req,res) {
+  return res.render('snake_condicional2');
+};
+module.exports.snake_r1 = function (req,res) {
+  return res.render('snake_repetitivo');
+};
+
+module.exports.snake_r2 = function (req,res) {
+  return res.render('snake_repetitivo2');
 };
