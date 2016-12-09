@@ -241,10 +241,10 @@ html(lang='es')
               form.formulario(action="/", method='post', name='formulario_registro')
                 div
                   .input-group
-                    input#correo.error(type='email', name='correo')
+                    input#correo.error(type='email', name='email')
                     label.label(for='correo') Correo Electronico:
                   .input-group
-                    input#contra.error(type='password', name='contra')
+                    input#contra.error(type='password', name='password')
                     label.label(for='contra') Contraseña:
                   input#btn-submit(type='submit', value='Jugar')
                   a(href='juego/snake.html')
