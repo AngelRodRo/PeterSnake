@@ -5,7 +5,7 @@
     "database": "peter-snake",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "secret": "ilovescotchyscotch",
+    "secret": "ilovescotchyscotch"
 
   },
 
@@ -15,7 +15,6 @@
     "database": "d5lomjgurukjeb",
     "host": "ec2-54-225-119-223.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "secret": "ilovescotchyscotch",
-
+    "secret": "ilovescotchyscotch"
   }
 }
