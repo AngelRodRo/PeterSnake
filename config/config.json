@@ -16,5 +16,6 @@
     "host": "ec2-54-225-119-223.compute-1.amazonaws.com",
     "dialect": "postgres",
     "secret": "ilovescotchyscotch"
+
   }
 }

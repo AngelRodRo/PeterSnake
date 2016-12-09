@@ -11,7 +11,7 @@ module.exports.login = function (req,res) {
   }
 
   models.User.findOne(opts).then(function (user) {
-    if(!user) return res.sendStatus(401);
+    if(!user) return res.send(401);
     var token = jwt.sign(user.dataValues,config.secret,{
       expiresIn : 60*60*24
     });
@@ -50,3 +50,7 @@ module.exports.loginView = function (req,res) {
 module.exports.registerView = function (req,res) {
   return res.render('register');
 }
+
+module.exports.snake = function (req,res) {
+  return res.render('snake');
+};

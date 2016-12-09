@@ -12,4 +12,5 @@ router.post('/',userController.login);
 router.get('/registro',userController.registerView);
 router.post('/registro',userController.register);
 router.get('/logout',userController.logout);
+router.get('/snake',userController.snake);
 module.exports = router;
