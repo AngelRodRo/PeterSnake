@@ -1,9 +1,201 @@
-html
+doctype html
+html(lang='es')
   head
+    title Peter Snake
+    link(href='./interfaces-sources/css/bootstrap.css', rel='stylesheet', type='text/css')
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='./interfaces-sources/js/jquery.min.js')
+    // -- start-smoth-scrolling--
+    script(type='text/javascript', src='./interfaces-sources/js/move-top.js')
+    script(type='text/javascript', src='./interfaces-sources/js/easing.js')
+    script(type='text/javascript', src='./interfaces-sources/js/functions.js')
+    script(type='text/javascript').
+      jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+      });
+      });
+    // -- start-smoth-scrolling--
+    // Custom Theme files
+    link(href='./interfaces-sources/css/style.css', rel='stylesheet', type='text/css')
+    link(href='./interfaces-sources/css/style_reg.css', rel='stylesheet', type='text/css')
+    // Custom Theme files
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(type='application/x-javascript').
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    // --webfonts--
+    link(href='http://fonts.googleapis.com/css?family=Oswald:300,400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Droid+Serif', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+    script(type='text/javascript').
+      function openVentana(){
+      $('.ventana__modal').slideDown("slow");
+      }
+      function closeVentana(){
+      $('.ventana__modal').slideUp("fast");
+      }
+    // --//webfonts--
+    // --start-top-nav-script--
+    script.
+      $(function() {
+      var pull 		= $('#pull');
+      menu 		= $('nav ul');
+      menuHeight	= menu.height();
+      $(pull).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle();
+      });
+      $(window).resize(function(){
+      var w = $(window).width();
+      if(w > 320 && menu.is(':hidden')) {
+      menu.removeAttr('style');
+      }
+      });
+      });
+    // --//End-top-nav-script--
   body
-    form(method="POST",action="/registro")
-      input(name="name",type="text")
-      input(name="lastname",type="text")
-      input(name="email",type="text")
-      input(name="password",type="text")
-      input(type="submit",value="Registro")
+    // ---start-container--
+    // --- start-header--
+    #home.header
+      .container
+        .logo
+          a(href='/login')
+            img(src='./interfaces-sources/images/img_logo.png', title='logo')
+        // --start-top-nav--
+        nav.top-nav
+          ul.top-nav
+            li.page-scroll.button1.button2
+              a(href='/')
+                h4  Inicio 
+            li.page-scroll.button1.button2
+              a.button1.button2(href='login')
+                h4 Uso
+            li.contatct-active.button1.button2
+              a.scroll.button1.button2(href='#contact')
+                h4 Contactenos
+          a#pull(href='#')
+            img(src='./interfaces-sources/images/nav-icon.png', title='menu')
+        .clearfix  
+    // --- //End-header--
+    // ---start-fearures--
+    #features.features
+      .container
+        .features-head.text-center
+          h2
+            | Registrate y 
+            span se parte de  nosotros
+          p Una Aplicacion, una experiencia.
+          p
+            | Registrate para obtener una cuenta con la cual podras realizar un seguimiento de su progreso o del progreso de su clase. Puede navegar por las distintas etapas y rompecabezas sin una cuenta, pero tendra que registrarse para guardar su progreso.
+        .contenedor-formulario
+          .wrap
+            form.formulario(name='formulario_registro',action="/registro", method='post')
+              div
+                .input-group
+                  input#nick.error(type='text', name='name')
+                  label.label(for='nick') Nick:
+                .input-group
+                  input#correo.error(type='email', name='email')
+                  label.label(for='correo') Correo Electronico:
+                .input-group
+                  input#contra.error(type='password', name='password')
+                  label.label(for='contra') Contraseña:
+                .input-group
+                  input#contra2.error(type='password', name='contra2')
+                  label.label(for='contra2') Repetir Contraseña:
+                .input-group.radio
+                  input#masculino.error(type='radio', name='gender', value='Masculino')
+                  label(for='masculino') Masculino
+                  input#femenino.error(type='radio', name='gender', value='Femenino')
+                  label(for='femenino') Femenino
+                .input-group
+                  input#edad.error(type='number', name='age')
+                  label(for='edad') Edad:
+                .input-group(checkbox='')
+                  input#terminos.error(type='checkbox', name='terminos', value='true')
+                  label(for='terminos') Acepto los terminos y coondiciones
+                input#btn-submit(type='submit', value='registro')
+          .otros__registros
+            img(align='center', src='./interfaces-sources/images/img_registro.jpg', style='width: 200%;')
+    // ---//End-fearures--
+    .footer
+      .container
+        .footer-top
+          .social
+            ul
+              li
+                a(href='')
+                  i.facebook  
+              li
+                a(href='')
+                  i.twitter  
+              li
+                a(href='')
+                  i.pinterest  
+              li
+                a(href='')
+                  i.google  
+              li
+                a(href='')
+                  i.tw  
+              li
+                a(href='')
+                  i.instagram  
+              li
+                a(href='')
+                  i.rss  
+              .clear  
+          .clearfix  
+        #contact.footer-bottom
+          .container.contact
+            .col-md-4.contact-top_left
+              h3 CONTACTANOS
+              p Para mayor informacion envianos un mensaje a PeterSnake@gmail.com
+              ul.contact_info
+                li
+                  i.mobile  
+                  span 951254337
+                li
+                  i.message  
+                  span.msg info(at)PeterSnake.com
+            .col-md-8.contact-top
+              br
+              h3 Envia un mensaje
+              form#contactform(method='post', action='/send/contact')
+                .to
+                  input.text(type='text', value='Nombre', name='name', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Name';}")
+                  input.text(type='text', value='Email', name='mail', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email';}", style='margin-left:20px')
+                  input.text(type='text', value='Motivo', name='subject', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Subject';}", style='margin-left:20px')
+                .contact_bottom-textarea
+                  textarea(name='message', value='Mensaje', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Message';}") Mensaje
+                .form-submit1
+                  input#submit(name='submit', type='submit', value='Envia tu mensaje')
+                  br
+                  p.m_msg Use un E-mail valido
+                .clear
+      script(src='./interfaces-sources/js/formulario.js')
+      script(src='./interfaces-sources/js/menu.js')
+      script(type='text/javascript').
+        $(document).ready(function() {
+        /*
+        var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear'
+        };
+        */
+        $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+      a#toTop(href='#', style='display: block;')
+        span#toTopHover(style='opacity: 1;') top 
+    // --//End-footer--
+    // --//End-container--
+
+    //- form(method="POST",action="/registro")
+    //-   input(name="name",type="text")
+    //-   input(name="lastname",type="text")
+    //-   input(name="email",type="text")
+    //-   input(name="password",type="text")
+    //-   input(type="submit",value="Registro")

@@ -26,11 +26,15 @@ module.exports.register = function (req,res) {
     name:params.name,
     lastname: params.lastname,
     email: params.email,
-    password: params.password
+    password: params.password,
+    gender: params.gender,
+    age: params.age
   }).then(function (user) {
     return res.redirect('/');
   })
+
   .catch(function (err) {
+    console.log(err);
     return res.send(503);
   })
 }

@@ -6,10 +6,12 @@ module.exports = function(sequelize,DataType){
         lastname:DataType.STRING,
         email:{
             type:DataType.STRING,
-            unique:true
+            // unique:true
         },
         password: DataType.STRING,
         phone:DataType.STRING,
+				gender: DataType.STRING,
+        age:DataType.INTEGER,
 	},{
 		classMethods:{
 			// associate:function(models){

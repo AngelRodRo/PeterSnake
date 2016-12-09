@@ -41,10 +41,9 @@ if ("associate" in db[modelName]) {
 
 
 sequelize.sync().then(function() {
-return console.log("CONNECTION TO MYSQL SUPERFUL");
+return console.log("CONNECTION TO POSTGRESQL SUPERFUL");
 });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
 module.exports = db;

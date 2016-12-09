@@ -1,7 +1,273 @@
-html
+doctype html
+html(lang='es')
   head
+    title Peter Snake
+    meta(charset='utf-8')
+    link(href='./interfaces-sources/css/bootstrap.css', rel='stylesheet', type='text/css')
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='./interfaces-sources/js/jquery.min.js')
+    // -- start-smoth-scrolling--
+    script(type='text/javascript', src='./interfaces-sources/js/move-top.js')
+    script(type='text/javascript', src='./interfaces-sources/js/easing.js')
+    script(type='text/javascript', src='./interfaces-sources/js/functions.js')
+    script(type='text/javascript').
+      jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+      });
+      });
+    // -- start-smoth-scrolling--
+    // Custom Theme files
+    link(href='./interfaces-sources/css/style.css', rel='stylesheet', type='text/css')
+    // Custom Theme files
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    script(type='application/x-javascript').
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    // --webfonts--
+    link(href='http://fonts.googleapis.com/css?family=Oswald:300,400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Droid+Serif', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+    script(type='text/javascript').
+      function openVentana(){
+      $('.ventana__modal').slideDown("slow");
+      }
+      function closeVentana(){
+      $('.ventana__modal').slideUp("fast");
+      }
+    // --//webfonts--
+    // --start-top-nav-script--
+    script.
+      $(function() {
+      var pull 		= $('#pull');
+      menu 		= $('nav ul');
+      menuHeight	= menu.height();
+      $(pull).on('click', function(e) {
+      e.preventDefault();
+      menu.slideToggle();
+      });
+      $(window).resize(function(){
+      var w = $(window).width();
+      if(w > 320 && menu.is(':hidden')) {
+      menu.removeAttr('style');
+      }
+      });
+      });
+    // --//End-top-nav-script--
+  // jackson
   body
-    form(method="POST",action="/")
-      input(type="text",name="email")
-      input(type="password",name="password")
-      input(type="submit",value="Iniciar Sesion")
+    // ---start-container--
+    // --- start-header--
+    #home.header
+      .container
+        .logo
+          a(href='/')
+            img(src='./interfaces-sources/images/img_logo.png', title='logo')
+        // --start-top-nav--
+        nav.top-nav
+          ul.top-nav
+            li.active.button1.button2
+              a.button1.button2(href='javascript:openVentana();')
+                h4 Jugar 
+            li.page-scroll.button1.button2
+              a.scroll.button1.button2(href='#features')
+                h4   Somos 
+            li.page-scroll.button1.button2
+              a.scroll.button1.button2(href='#team')
+                h4 Uso
+            li.page-scroll.button1.button2
+              a.button1.button2(href='/registro')
+                h4 Registrarse
+            li.contatct-active.button1.button2
+              a.scroll.button1.button2(href='#contact')
+                h4 Contactenos
+          a#pull(href='#')
+            img(src='./interfaces-sources/images/nav-icon.png', title='menu')
+        .clearfix  
+    // --- //End-header--
+    // --start-slider-script--
+    script(src='./interfaces-sources/js/responsiveslides.min.js')
+    script.
+      // You can also use "$(window).load(function() {"
+      $(function () {
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+      auto: true,
+      pager: true,
+      nav: true,
+      speed: 500,
+      namespace: "callbacks",
+      before: function () {
+      $('.events').append("<li>before event fired.</li>");
+      },
+      after: function () {
+      $('.events').append("<li>after event fired.</li>");
+      }
+      });
+      });
+    // --//End-slider-script--
+    // Slideshow 4
+    #top.callbacks_container
+      ul#slider4.rslides
+        li
+          img(src='./interfaces-sources/images/slide_1.jpg', alt='')
+          .caption
+            a(href='javascript:openVentana();')
+              img(src='./interfaces-sources/images/BOTON1.png', alt='Mountain View', style='width:400px;height:300px;')
+            //
+              <div class="slide-text-info">
+              <h1>JUGAR</h1>
+              </div>
+        li
+          img(src='./interfaces-sources/images/slide_2.jpg', alt='')
+          .caption
+            .slide-text-info
+        li
+          img(src='./interfaces-sources/images/slide_3.jpg', alt='')
+          .caption
+            .slide-text-info
+    .clearfix  
+    // --- //End-slider--
+    // ---start-fearures--
+    #features.features
+      .container(align='center')
+        .features-head.text-center
+          h2
+            | La mejor opcion 
+            span se parte de  nosotros
+          p Una Aplicacion, una experiencia.
+          p
+            | Buscamos mejorar la satisfaccion de nuestros alumnos y la eficiencia educativa. Ademas somos concientes de la importancia de aprender a programar mediante juegos totalmente entretenidos, donde la tu razonamiento aumentara cada vez mas
+        .feature-grids(align='center')
+          .col-lg-4.feature-grid
+            img(src='./interfaces-sources/images/circulo1.png', width='130', height='130')
+            br
+            h2.info__titulo JUEGA
+            p.info__txt
+              | Iniciate en el mundo de la programacion con interactivos juegos que te ayudaran a despertar tus habilidades
+          .col-lg-4.feature-grid
+            img(src='./interfaces-sources/images/circulo2.png', width='130', height='130')
+            br
+            h2.info__titulo APRENDE
+            p.info__txt Desbloquea nuevos niveles y alcanza la mayor puntuación. Reta a tus amigos
+          .col-lg-4.feature-grid
+            img(src='./interfaces-sources/images/circulo3.png', width='130', height='130')
+            br
+            h2.info__titulo GANA
+            p.info__txt
+              | Gana Premios cada vez que acumules 3000 puntos. Comparte tus logros con tus amigos
+    // ---//End-fearures--
+    // ---start-team--
+    #team.team
+      .container
+        .team-head.text-center
+          h3 FORMAS DE USO
+          .col-md-3
+            .region.region-menu-footer-1
+              .cajadevideo
+                .video
+                  iframe(src='./interfaces-sources/https://www.youtube.com/embed/ItNKIRzQCm8', frameborder='0', allowfullscreen='')
+          .col-md-3.text-center
+            .region.region-menu-footer-1
+              section#block-menu-menu-menu-footer.block.block-menu.clearfix
+                h2.block-title ¿COMO JUGAR?
+                p
+                  | Mueve a Peter Snake a través de la pantalla usando instrucciones de programación, las instrucciones aparecerán en forma de bloque al lado derecho del juego, tendrás que mover dichos bloques los cuales dan movimiento a Peter Snake y así poder alcanzar tu objetivo y comer la fruta.
+                  | Cada vez que alcances un objetivo aparecerá una pantalla que te mostrara el código de la aplicación y su lógica.
+                  | Pero para jugar primero tienes que registrarte.
+    // ---//End-team--
+    .footer
+      .container
+        .footer-top
+          .social
+            ul
+              li
+                a(href='')
+                  i.facebook  
+              li
+                a(href='')
+                  i.twitter  
+              li
+                a(href='')
+                  i.pinterest  
+              li
+                a(href='')
+                  i.google  
+              li
+                a(href='')
+                  i.tw  
+              li
+                a(href='')
+                  i.instagram  
+              li
+                a(href='')
+                  i.rss  
+              .clear  
+          .clearfix  
+        #contact.footer-bottom
+          .container.contact
+            .col-md-4.contact-top_left
+              h3 CONTACTANOS
+              p Para mayor informacion envianos un mensaje a PeterSnake@gmail.com
+              ul.contact_info
+                li
+                  i.mobile  
+                  span 951254337
+                li
+                  i.message  
+                  span.msg info(at)PeterSnake.com
+            .col-md-8.contact-top
+              br
+              h3 Envia un mensaje
+              form#contactform(method='post', action='/send/contact')
+                .to
+                  input.text(type='text', value='Nombre', name='name', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Name';}")
+                  input.text(type='text', value='Email', name='mail', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email';}", style='margin-left:20px')
+                  input.text(type='text', value='Motivo', name='subject', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Subject';}", style='margin-left:20px')
+                .contact_bottom-textarea
+                  textarea(name='message', value='Mensaje', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Message';}") Mensaje
+                .form-submit1
+                  input#submit(name='submit', type='submit', value='Envia tu mensaje')
+                  br
+                  p.m_msg Use un E-mail valido
+                .clear
+        #ventana__modal.ventana__modal
+          .contenedor-formulario
+            #form__inicio
+              .cerrar__modal
+                a(href='javascript:closeVentana();') X
+              h1 INICIAR SESION
+              hr
+              form.formulario(action="/", method='post', name='formulario_registro')
+                div
+                  .input-group
+                    input#correo.error(type='email', name='correo')
+                    label.label(for='correo') Correo Electronico:
+                  .input-group
+                    input#contra.error(type='password', name='contra')
+                    label.label(for='contra') Contraseña:
+                  input#btn-submit(type='submit', value='Jugar')
+                  a(href='juego/snake.html')
+      script(src='./interfaces-sources/js/formulario.js')
+      script(src='./interfaces-sources/js/menu.js')
+      script(type='text/javascript').
+        $(document).ready(function() {
+        /*
+        var defaults = {
+        containerID: 'toTop', // fading element id
+        containerHoverID: 'toTopHover', // fading element hover id
+        scrollSpeed: 1200,
+        easingType: 'linear'
+        };
+        */
+        $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+      a#toTop(href='#', style='display: block;')
+        span#toTopHover(style='opacity: 1;') top 
+    // --//End-footer--
+    // --//End-container--
+
+    //- form(method="POST",action="/")
+    //-   input(type="text",name="email")
+    //-   input(type="password",name="password")
+    //-   input(type="submit",value="Iniciar Sesion")
