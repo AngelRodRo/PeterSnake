@@ -61,7 +61,7 @@ block content
             font(color='Green', face='Comic Sans MS,arial', size='5')
               h2 JUEGO COMPLETADO
             font(color='Green', face='Comic Sans MS,arial', size='3')
-              h3 ¡FELICITACIONES! PASASTES EL SEGUNDO NIVEL!
+              h3 ¡FELICITACIONES! PASASTES EL TERCER NIVEL!
             font(color='Olive', face='Comic Sans MS,arial', size='2')
               p#modal-instructions.info_gamer
                 | Al colocar los bloques de este rompecabezas, has creado una serie de instrucciones en un lenguaje informático llamado JavaScript. Este código le dice al ordenador lo que debe mostrar en la pantalla.
@@ -69,11 +69,11 @@ block content
               .ins
                 .codigo_snake
                   p#modal-instructions.instruction
-                    | moveRight();
+                    | for(i=1;i<=4;i++)
                     br
-                    | 																	  moveDown();
+                    |   moveRight();
                     br
-                    | 																	 	for(i=1;i
+                    | 	
               div(class='tamaño_snake')
                 img(src='./game-sources/styles/img/snake.png')
             .modal_button
