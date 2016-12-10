@@ -4,7 +4,7 @@ var userController = require('../controllers/userController');
 var middleware = require('../middleware/authenticate');
 /* GET home page. */
 router.get('/principal', middleware.authenticate, function(req, res) {
-  res.render('snake_condicional');
+  res.render('snake_secuencial');
 });
 
 router.get('/',userController.loginView);

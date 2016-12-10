@@ -15,14 +15,14 @@ $(document).on('ready', function() {
 	//Obtenemos el ancho y alto de nuestro canvas.
 	var width = $("#snake").width();
 	var height = $("#snake").height();
-
+	document.getElementById('color2').style.background='#000000';	
 	var arrayWall=[{x:6,y:8},{x:7,y:7},{x:7,y:6},{x:7,y:5},{x:6,y:4},{x:5,y:4},{x:4,y:3},{x:3,y:3},{x:2,y:3},
 	{x:2,y:2},{x:0,y:2},{x:0,y:3},{x:0,y:4},{x:1,y:5},{x:2,y:5},{x:4,y:6},{x:5,y:6}];
 
 	//Definimos algunas variables para configurar nuestro juego
 	var cellWidth = 50;
 
-	var d;	
+	var d;
 
 	var food;
 	var score;
@@ -40,8 +40,8 @@ $(document).on('ready', function() {
 	var aEat = new Audio();
 	var aDie = new Audio();
 
-	var salto = new Audio();	
-	var iBackground = new Image();	
+	var salto = new Audio();
+	var iBackground = new Image();
 
 	//var tiempo = 0;
 	//var stop;
@@ -74,11 +74,11 @@ $(document).on('ready', function() {
 		iHead3.src = 'assets/izq_snake.png';
 		iHead4.src = 'assets/der_snake.png';
 		aEat.src = 'assets/come.oga';
-		aDie.src = 'assets/muere.oga';		
+		aDie.src = 'assets/muere.oga';
 		iBackground.src = 'assets/fondoSecuencial2.png';
 		salto.src= 'assets/salto.wav';
-		
-		
+
+
 
 
 		//iBrick.src = 'assets/brick.png';
@@ -90,8 +90,8 @@ $(document).on('ready', function() {
 
 	init();
 	iBackground.onload = function(){
-	context.drawImage( iBackground, 0, 0, width, height );	
-		
+	context.drawImage( iBackground, 0, 0, width, height );
+
 	setTimeout(paint,1000,"right");
 	setTimeout(paint,2000,"right");
 	setTimeout(paint,3000,"right");
@@ -126,7 +126,7 @@ $(document).on('ready', function() {
 	//Dibujamos la víbora
 	function paint(direccion)
 
-	{			
+	{
 		context.drawImage( iBackground, 0, 0, width, height );
 
 		console.log(direccion);
@@ -156,10 +156,10 @@ $(document).on('ready', function() {
 
 		if (nx == -1 || nx == width / cellWidth || ny == -1 ||
 
-			ny == height / cellWidth || checkCollision(nx, ny, snake) || checkCollision(nx,ny,arrayWall )) {											
+			ny == height / cellWidth || checkCollision(nx, ny, snake) || checkCollision(nx,ny,arrayWall )) {
 
-			emptyContainer();			
-			finestraModal2.classList.add("js-mostrar2");			
+			emptyContainer();
+			finestraModal2.classList.add("js-mostrar2");
 
 			aDie.play();
 			return;
@@ -180,8 +180,8 @@ $(document).on('ready', function() {
 
 			emptyContainer();
 			finestraModal.classList.add("js-mostrar");
-			
-			
+
+
 
 		} else {
 
@@ -206,7 +206,7 @@ $(document).on('ready', function() {
 		typeCell='body';
 		for(var i = 1; i < snake.length; i++) {
 
-			c = snake[i];		
+			c = snake[i];
 			paintCell(c.x, c.y, typeCell);
 		}
 
@@ -245,13 +245,13 @@ $(document).on('ready', function() {
 
 
 	//Verificiamos si hubo alguna colisión (si la hubo el juego se reinicia)
-	
+
 	function checkCollision(x, y,array)
 	{
 		//console.log(arrayWall);
 		for(var i = 0; i < array.length; i++)
 		{
-			if(array[i].x == x && array[i].y == y) {				
+			if(array[i].x == x && array[i].y == y) {
 				return true;
 
 			}
@@ -286,7 +286,7 @@ $(document).on('ready', function() {
 		//aDie.play();
 
 		//document.getElementById('compile').style.display = 'block';
-		init();  	
+		init();
 
 		return;
 	}
@@ -295,17 +295,17 @@ $(document).on('ready', function() {
 	btnRepetir.click(repetirDenuevo);
 
 	function repetirDenuevo(){
-		finestraModal.classList.remove("js-mostrar");			
-		init();		
-		
+		finestraModal.classList.remove("js-mostrar");
+		init();
+
 	}
 
 	var btnRepetir_pierde=$('#repetir2');
 	btnRepetir_pierde.click(repetirDenuevo2);
 
 	function repetirDenuevo2(){
-		finestraModal2.classList.remove("js-mostrar2");			
-		init();			
+		finestraModal2.classList.remove("js-mostrar2");
+		init();
 
 	}
 
@@ -313,25 +313,32 @@ $(document).on('ready', function() {
 	btnaspa.click(Aspa);
 
 	function Aspa(){
-		finestraModal.classList.remove("js-mostrar");			
-		init();			
+		finestraModal.classList.remove("js-mostrar");
+		init();
 	}
 
 	var btnaspa2=$('#finestra-modal-tancar2');
 	btnaspa2.click(Aspa2);
 
 	function Aspa2(){
-		finestraModal2.classList.remove("js-mostrar2");			
-		init();			
+		finestraModal2.classList.remove("js-mostrar2");
+		init();
 	}
-/*
-	var nivel1=$('#nivel1');
-	btnnivel1.click(Nivel1);
 
-	function Nivel1(){
+	var btnaspa3=$('#finestra-modal-tancar3');
+	btnaspa3.click(Aspa3);
 
-		recyclerPiece1();
-	}*/
+	function Aspa3(){
+		finestraModal3.classList.remove("js-mostrar3");
+		init();
+	}
+
+	var btnmostrarCodigo=$('#finestra-modal-obrir');
+	btnmostrarCodigo.click(MostrarCodigo);
+
+	function MostrarCodigo(){
+		finestraModal.classList.add("js-mostrar");
+	}
 
 	var btnCompile=$('#compile');
 	btnCompile.click(recyclerPiece1);
@@ -342,21 +349,21 @@ $(document).on('ready', function() {
 		var pieceBox=document.getElementsByClassName('piece-box');
 		var pieces=document.getElementById('piece-box').getElementsByClassName('piece');
 		var piece;
-		var instruction;		
+		var instruction;
 		var length=pieces.length;
 		var i=0;
-		var array=[];		
+		var array=[];
 		console.log(length);
 
 		for(var i = 0; i <= length; i++)
 		{
-				
-				instruction=pieces[i].dataset.instruction;			
-				
+
+				instruction=pieces[i].dataset.instruction;
+
 				console.log(instruction);
-				setTimeout(paint,i*1000,instruction);				
-				array[i]=instruction;				
-				console.log(array);				
+				setTimeout(paint,i*1000,instruction);
+				array[i]=instruction;
+				console.log(array);
 
 		}
 
@@ -393,8 +400,8 @@ $(document).on('ready', function() {
 	btnEmpty.click(emptyContainer);
 
 	function emptyContainer(){
-		document.getElementById('piece-box').innerHTML= "";		  	
-		
+		document.getElementById('piece-box').innerHTML= "";
+
 	}
 /*
 	window.onload = function() {

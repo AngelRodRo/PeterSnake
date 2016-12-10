@@ -13,6 +13,8 @@ $(document).on('ready', function() {
 	var width = $("#snake").width();
 	var height = $("#snake").height();
 
+	document.getElementById('color6').style.background='#000000';
+
 	var arrayWall=[{x:2,y:5},{x:3,y:5},{x:4,y:4},{x:5,y:4},{x:6,y:4},
 	{x:6,y:3},{x:7,y:2},{x:8,y:3},{x:8,y:4},{x:8,y:5},{x:8,y:6},{x:7,y:7},{x:6,y:7},
 	{x:5,y:7},{x:4,y:7},{x:3,y:7},{x:2,y:7}];
@@ -74,7 +76,7 @@ $(document).on('ready', function() {
 		iHead3.src = 'assets/izq_snake.png';
 		iHead4.src = 'assets/der_snake.png';
 		aEat.src = 'assets/come.oga';
-		aDie.src = 'assets/muere.oga';		
+		aDie.src = 'assets/muere.oga';
 		iBackground.src = 'assets/fondoCondicional2.png';
 		salto.src= 'assets/salto.wav';
 
@@ -123,8 +125,8 @@ $(document).on('ready', function() {
 
 
 		food1 = {
-			x: Math.round(0.9 * (width - cellWidth) / cellWidth),
-			y: Math.round(0.4 * (height - cellWidth) / cellWidth),
+			x: Math.round(0.7* (width - cellWidth) / cellWidth),
+			y: Math.round(0.7 * (height - cellWidth) / cellWidth),
 
 		};
 	}
@@ -177,15 +179,34 @@ $(document).on('ready', function() {
 			};
 
 			score++;
-			aEat.play();
+			aDie.play();
 
 
 			emptyContainer();
+			finestraModal2.classList.add("js-mostrar2");
+			return;
+
+
+
+		}
+		else if(nx == food1.x && ny == food1.y) {
+			var tail = {
+				x: nx,
+				y: ny
+			};
+
+			score++;
+			aEat.play();
+
+			emptyContainer();
 			finestraModal.classList.add("js-mostrar");
+			return;
 
 
 
-		} else {
+		}
+
+		else {
 
 			salto.play();
 			var tail = snake.pop();
@@ -337,6 +358,29 @@ $(document).on('ready', function() {
 	function Aspa2(){
 		finestraModal2.classList.remove("js-mostrar2");
 		init();
+	}
+
+	var btnaspa3=$('#finestra-modal-tancar3');
+	btnaspa3.click(Aspa3);
+
+	function Aspa3(){
+		finestraModal3.classList.remove("js-mostrar3");
+		init();
+	}
+
+	var btnaspa3=$('#finestra-modal-tancar3');
+	btnaspa3.click(Aspa3);
+
+	function Aspa3(){
+		finestraModal3.classList.remove("js-mostrar3");
+		init();
+	}
+
+	var btnmostrarCodigo=$('#finestra-modal-obrir');
+	btnmostrarCodigo.click(MostrarCodigo);
+
+	function MostrarCodigo(){
+		finestraModal.classList.add("js-mostrar");
 	}
 
 	var btnCompile=$('#compile');

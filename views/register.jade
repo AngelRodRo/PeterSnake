@@ -147,33 +147,33 @@ html(lang='es')
                   i.rss  
               .clear  
           .clearfix  
-        #contact.footer-bottom
-          .container.contact
-            .col-md-4.contact-top_left
-              h3 CONTACTANOS
-              p Para mayor informacion envianos un mensaje a PeterSnake@gmail.com
-              ul.contact_info
-                li
-                  i.mobile  
-                  span 951254337
-                li
-                  i.message  
-                  span.msg info(at)PeterSnake.com
-            .col-md-8.contact-top
-              br
-              h3 Envia un mensaje
-              form#contactform(method='post', action='/send/contact')
-                .to
-                  input.text(type='text', value='Nombre', name='name', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Name';}")
-                  input.text(type='text', value='Email', name='mail', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email';}", style='margin-left:20px')
-                  input.text(type='text', value='Motivo', name='subject', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Subject';}", style='margin-left:20px')
-                .contact_bottom-textarea
-                  textarea(name='message', value='Mensaje', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Message';}") Mensaje
-                .form-submit1
-                  input#submit(name='submit', type='submit', value='Envia tu mensaje')
-                  br
-                  p.m_msg Use un E-mail valido
-                .clear
+        //- #contact.footer-bottom
+        //-   .container.contact
+        //-     .col-md-4.contact-top_left
+        //-       h3 CONTACTANOS
+        //-       p Para mayor informacion envianos un mensaje a PeterSnake@gmail.com
+        //-       ul.contact_info
+        //-         li
+        //-           i.mobile  
+        //-           span 951254337
+        //-         li
+        //-           i.message  
+        //-           span.msg info(at)PeterSnake.com
+        //-     .col-md-8.contact-top
+        //-       br
+        //-       h3 Envia un mensaje
+        //-       form#contactform(method='post', action='/send/contact')
+        //-         .to
+        //-           input.text(type='text', value='Nombre', name='name', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Name';}")
+        //-           input.text(type='text', value='Email', name='mail', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Email';}", style='margin-left:20px')
+        //-           input.text(type='text', value='Motivo', name='subject', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Subject';}", style='margin-left:20px')
+        //-         .contact_bottom-textarea
+        //-           textarea(name='message', value='Mensaje', onfocus="this.value = '';", onblur="if (this.value == '') {this.value = 'Message';}") Mensaje
+        //-         .form-submit1
+        //-           input#submit(name='submit', type='submit', value='Envia tu mensaje')
+        //-           br
+        //-           p.m_msg Use un E-mail valido
+        //-         .clear
       script(src='./interfaces-sources/js/formulario.js')
       script(src='./interfaces-sources/js/menu.js')
       script(type='text/javascript').

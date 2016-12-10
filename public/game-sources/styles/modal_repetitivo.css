@@ -10,13 +10,15 @@
   height: 1em;
   color: white;
   background-color: DarkMagenta;
-  font-size: 24px;
+  font-size: 54px;
   font-weight: bold;
   line-height: 1em;
   border-radius: 3px;
   cursor: pointer;
 }
-
+.boto3:hover{  
+  background-color: rgb(141, 232, 0);
+}
 
 .boto3:hover {
   text-decoration: none;
@@ -112,4 +114,14 @@
     color: #000000;
     font-size: 20px;
     /*border: solid;*/
+}
+.boto3{
+    position: absolute;
+    z-index: 15;
+    top: .75em;
+    right: .75em;
+    padding: 0;
+    background-color: red;
+    border-radius: 50%;
+
 }

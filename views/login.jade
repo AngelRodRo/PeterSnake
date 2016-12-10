@@ -69,9 +69,9 @@ html(lang='es')
             li.active.button1.button2
               a.button1.button2(href='javascript:openVentana();')
                 h4 Jugar 
-            li.page-scroll.button1.button2
-              a.scroll.button1.button2(href='#features')
-                h4   Somos 
+            //- li.page-scroll.button1.button2
+            //-   a.scroll.button1.button2(href='#features')
+            //-     h4   Somos 
             li.page-scroll.button1.button2
               a.scroll.button1.button2(href='#team')
                 h4 Uso
@@ -133,9 +133,10 @@ html(lang='es')
       .container(align='center')
         .features-head.text-center
           h2
-            | La mejor opcion 
-            span se parte de  nosotros
-          p Una Aplicacion, una experiencia.
+            | Una divertida historia junto a
+            | 
+            span  Peter-Snake
+          p Un Juego, una diverti aventura.
           p
             | Buscamos mejorar la satisfaccion de nuestros alumnos y la eficiencia educativa. Ademas somos concientes de la importancia de aprender a programar mediante juegos totalmente entretenidos, donde la tu razonamiento aumentara cada vez mas
         .feature-grids(align='center')
@@ -144,18 +145,18 @@ html(lang='es')
             br
             h2.info__titulo JUEGA
             p.info__txt
-              | Iniciate en el mundo de la programacion con interactivos juegos que te ayudaran a despertar tus habilidades
+              | Iniciate en el mundo de la programacion con un interactivo juego que te ayudara a despertar tus habilidades.
           .col-lg-4.feature-grid
             img(src='./interfaces-sources/images/circulo2.png', width='130', height='130')
             br
-            h2.info__titulo APRENDE
-            p.info__txt Desbloquea nuevos niveles y alcanza la mayor puntuación. Reta a tus amigos
+            h2.info__titulo DESCUBRE
+            p.info__txt Las estructuras basicas en la programacion. 
           .col-lg-4.feature-grid
             img(src='./interfaces-sources/images/circulo3.png', width='130', height='130')
             br
-            h2.info__titulo GANA
+            h2.info__titulo APRENDE
             p.info__txt
-              | Gana Premios cada vez que acumules 3000 puntos. Comparte tus logros con tus amigos
+              | Consigue el objetivo de cada nivel y desbloquea nuevos niveles.
     // ---//End-fearures--
     // ---start-team--
     #team.team
@@ -166,7 +167,8 @@ html(lang='es')
             .region.region-menu-footer-1
               .cajadevideo
                 .video
-                  iframe(src='./interfaces-sources/https://www.youtube.com/embed/ItNKIRzQCm8', frameborder='0', allowfullscreen='')
+                  img(src='./img/peter-game.png')
+                  //iframe(src='./interfaces-sources/https://www.youtube.com/embed/ItNKIRzQCm8', frameborder='0', allowfullscreen='')
           .col-md-3.text-center
             .region.region-menu-footer-1
               section#block-menu-menu-menu-footer.block.block-menu.clearfix

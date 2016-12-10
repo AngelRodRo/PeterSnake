@@ -17,13 +17,13 @@ $(document).on('ready', function() {
 	//Obtenemos el ancho y alto de nuestro canvas.
 	var width = $("#snake").width();
 	var height = $("#snake").height();
-
-	var arrayWall=[{x:1,y:5},{x:2,y:6},{x:3,y:7},{x:4,y:7},{x:5,y:7},{x:3,y:4},{x:4,y:5},{x:5,y:5},{x:6,y:5}];
+	document.getElementById('color1').style.background='#000000';
+	var arrayWall=[{x:1,y:5},{x:2,y:6},{x:3,y:7},{x:4,y:7},{x:5,y:7},{x:6,y:6},{x:5,y:5},{x:5,y:5},{x:4,y:5},{x:3,y:4}];
 
 	//Definimos algunas variables para configurar nuestro juego
 	var cellWidth = 50;
 
-	var d;	
+	var d;
 
 	var food;
 	//var stop;
@@ -57,7 +57,7 @@ $(document).on('ready', function() {
 		d = "down";
 		createSnake();
 		createFood();
-		//score = 0;
+		score = 0;
 
 
 		/*if(typeof gameLoop != "undefined") {
@@ -89,7 +89,7 @@ $(document).on('ready', function() {
 
 	iBackground.onload = function(){
 
-	context.drawImage( iBackground, 0, 0, width, height );			
+	context.drawImage( iBackground, 0, 0, width, height );
 
 	setTimeout(paint,1000,"left");
 	setTimeout(paint,2000,"left");
@@ -179,6 +179,7 @@ $(document).on('ready', function() {
 
 			emptyContainer();
 			finestraModal.classList.add("js-mostrar");
+			return;
 
 
 
@@ -312,9 +313,8 @@ $(document).on('ready', function() {
 	btn_empezar.click(EmpezarJuego);
 
 	function EmpezarJuego(){
-		finestraModal3.classList.remove("js-mostrar3");			
-		//comenzar();
-		init();			
+		finestraModal3.classList.remove("js-mostrar3");
+		init();
 
 	}
 
@@ -343,11 +343,10 @@ $(document).on('ready', function() {
 	}
 
 	var btnmostrarCodigo=$('#finestra-modal-obrir');
-	btnMostrarCodigo.click(MostrarCodigo);
+	btnmostrarCodigo.click(MostrarCodigo);
 
 	function MostrarCodigo(){
-		finestraModal.classList.remove("js-mostrar");
-		init();
+		finestraModal.classList.add("js-mostrar");
 	}
 
 	var btnCompile=$('#compile');
@@ -385,7 +384,7 @@ $(document).on('ready', function() {
 			aDie.play();
 			finestraModal2.classList.add("js-mostrar2");
 		}
-	}	
+	}
 
 	function execInstruction(instruction ){
 		if (instruction == "left" && d != "right") {

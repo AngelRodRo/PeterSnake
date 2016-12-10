@@ -1,3 +1,4 @@
+
 var jwt = require('jsonwebtoken');
 var config = require('../config/secret');
 module.exports.authenticate = function (req,res,next) {
