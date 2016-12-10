@@ -47,30 +47,9 @@ block content
                   img.piece-img(src='./game-sources/styles/img/long-arrow-right.svg', alt='')
                 #piece-for.piece.piece-for(draggable='true', data-instruction='for')
                   font(color='#181518', face='Comic Sans MS,arial', size='3')
-                    p  Repetir 2 veces 	
+                    p  Repetir 4 veces 	
                     br
-                #piece-if.piece.piece-for(draggable='true', data-instruction='if')
-                  font(color='#181518', face='Comic Sans MS,arial', size='3')
-                    p  Si la manzana enfrente es verde
-                    br
-                .piece.piece-around(data-instruction='around', draggable='true')
-                  //
-                    <span class="t"></span>
-                    <span class="b"></span>
-                  //
-                    <div id="piece-for" class="piece piece-for" draggable="true" data-instruction="for" >
-                    <font color="#181518" face="Comic Sans MS,arial" size= 3>
-                    <p> Si la manzana es verde, esquivar y comer la roja</p><br>
-                    </font>
-                    </div>
-                    <div class="piece piece-right" data-instruction="right"  draggable="true">
-                    <span class="t"></span>
-                    <span class="b"></span>
-                    <img class="piece-img" src="./game-sources/styles/img/long-arrow-right.svg" alt="" />
-                  // <img class="piece-img" src="./game-sources/styles/img/long-arrow-left.svg" alt="" />
-                  font(color='#181518', face='Comic Sans MS,arial', size='3')
-                    p  Rodear la manzana
-                    br
+                
               .game-buttons
                 button#compile.btn-first(type='button', name='compile') COMPILAR
                 button#reiniciar.btn-third(type='button', name='compile') REINICIAR
