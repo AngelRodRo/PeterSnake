@@ -299,7 +299,7 @@ $(document).on('ready', function() {
 	function repetirDenuevo(){
 		finestraModal.classList.remove("js-mostrar");
 		init();
-		
+		return;
 	}
 
 	var btnRepetir_pierde=$('#repetir2');
@@ -307,8 +307,8 @@ $(document).on('ready', function() {
 
 	function repetirDenuevo2(){
 		finestraModal2.classList.remove("js-mostrar2");
-		init();		
-
+		init();
+		return;
 	}
 
 	var btn_empezar=$('#empezar');
@@ -325,7 +325,7 @@ $(document).on('ready', function() {
 
 	function Aspa(){
 		finestraModal.classList.remove("js-mostrar");
-		init();		
+		init();
 	}
 
 	var btnaspa2=$('#finestra-modal-tancar2');
@@ -333,7 +333,7 @@ $(document).on('ready', function() {
 
 	function Aspa2(){
 		finestraModal2.classList.remove("js-mostrar2");
-		init();				
+		init();
 	}
 
 	var btnaspa3=$('#finestra-modal-tancar3');
@@ -342,7 +342,7 @@ $(document).on('ready', function() {
 	function Aspa3(){
 		finestraModal3.classList.remove("js-mostrar3");
 		init();
-		document.getElementById("fondo").play();		
+		document.getElementById("fondo").play();
 	}
 
 	var btnmostrarCodigo=$('#finestra-modal-obrir');
@@ -386,6 +386,7 @@ $(document).on('ready', function() {
 		if (score==0) {
 			aDie.play();
 			finestraModal2.classList.add("js-mostrar2");
+			return;
 		}
 	}
 
