@@ -6,7 +6,7 @@ block content
       article#tab1.tab_1
         .game-container
         .central
-          .game
+          .game            
             //
               <div id="cronometro">
               <div id="reloj">
@@ -93,7 +93,7 @@ block content
               a(href='./snake_repetitivo')
                 button.modal_button1 CONTINUAR
             #finestra-modal-tancar.finestra-modal-tancar.boto ×
-        #finestra-modal2.finestra-modal2
+        #finestra-modal2.finestra-modal2          
           .finestra-modal__contingut2
             font(color='Green', face='Comic Sans MS,arial', size='5')
               h2 !PERDISTES EL JUEGO!
@@ -114,6 +114,11 @@ block content
                   button#repetir2.modal_button12 REPETIR
                   // <a href="./snake_nivel2.html"><button class="modal_button1">CONTINUAR</button></a>
                 #finestra-modal-tancar2.finestra-modal-tancar.boto2 ×
+                audio(src='./assets/fondo.mp3', autoplay='', loop='')
+                audio#teclea1(src='./assets/teclea1.wav')  
+                audio#teclea2(src='./assets/teclea2.wav')  
+
+
 
 block javascript
   script(src='./game-sources/scripts/jquery-1.10.1.min.js', type='text/javascript')

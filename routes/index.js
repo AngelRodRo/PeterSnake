@@ -3,10 +3,10 @@ var router = express.Router();
 var userController = require('../controllers/userController');
 var middleware = require('../middleware/authenticate');
 /* GET home page. */
-router.get('/principal', middleware.authenticate, function(req, res) {
-  res.render('snake_secuencial');
-});
-
+// router.get('/principal', middleware.authenticate, function(req, res) {
+//   res.render('snake_secuencial');
+// });
+router.get('/principal',userController.principal);
 router.get('/',userController.loginView);
 router.post('/',userController.login);
 router.get('/registro',userController.registerView);

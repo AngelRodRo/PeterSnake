@@ -28,6 +28,7 @@ $(document).on('ready',function (){
       //osea le agregaremos el clon
       e.dataTransfer.setData('text',padre.innerHTML);
       console.log(padre);
+      document.getElementById("teclea2").play();
     }
 
     function recogerpieza(e){
@@ -39,6 +40,7 @@ $(document).on('ready',function (){
     }
     function soltarpieza(e){
       this.style.backgroundColor='#3498db';
+      document.getElementById("teclea1").play();
     }
 
     function piezasobre(e){

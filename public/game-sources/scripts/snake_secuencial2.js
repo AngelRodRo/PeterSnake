@@ -16,6 +16,7 @@ $(document).on('ready', function() {
 	var width = $("#snake").width();
 	var height = $("#snake").height();
 	document.getElementById('color2').style.background='#000000';	
+	document.getElementById('finestra-modal-obrir').style.display = 'none';
 	var arrayWall=[{x:6,y:8},{x:7,y:7},{x:7,y:6},{x:7,y:5},{x:6,y:4},{x:5,y:4},{x:4,y:3},{x:3,y:3},{x:2,y:3},
 	{x:2,y:2},{x:0,y:2},{x:0,y:3},{x:0,y:4},{x:1,y:5},{x:2,y:5},{x:4,y:6},{x:5,y:6}];
 
@@ -180,7 +181,8 @@ $(document).on('ready', function() {
 
 			emptyContainer();
 			finestraModal.classList.add("js-mostrar");
-
+			document.getElementById('finestra-modal-obrir').style.display = 'block';
+			return;
 
 
 		} else {

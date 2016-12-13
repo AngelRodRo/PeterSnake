@@ -20,6 +20,7 @@ $(document).on('ready', function() {
 	var width = $("#snake").width();
 	var height = $("#snake").height();
 	document.getElementById('color3').style.background='#000000';
+	document.getElementById('finestra-modal-obrir').style.display = 'none';
 	/*var arrayWall=[{x:2,y:0},{x:3,y:0},{x:4,y:1},{x:4,y:3},{x:3,y:3},{x:2,y:2}];*/
 	//Definimos algunas variables para configurar nuestro juego
 	var cellWidth = 50;
@@ -162,8 +163,9 @@ $(document).on('ready', function() {
 			aEat.play();
 
 			emptyContainer();
-			//finestraModal.classList.add("js-mostrar");
-			//return;
+			finestraModal.classList.add("js-mostrar");
+			document.getElementById('finestra-modal-obrir').style.display = 'block';
+			return;
 
 			//createFood();
 		} else {
@@ -324,6 +326,7 @@ $(document).on('ready', function() {
 	function Aspa3(){
 		finestraModal3.classList.remove("js-mostrar3");
 		init();
+		document.getElementById("fondo").play();
 	}
 
 	var btnmostrarCodigo=$('#finestra-modal-obrir');

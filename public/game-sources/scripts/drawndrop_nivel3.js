@@ -35,6 +35,7 @@ $(document).on('ready',function (){
       e.dataTransfer.setData('text',padre.innerHTML);
       console.log(padre);
       padre.appendChild(clon);
+      document.getElementById("teclea2").play();
     }
 
     function recogerpieza(e){
@@ -48,6 +49,7 @@ $(document).on('ready',function (){
         e.preventDefault();
       this.style.backgroundColor='#3498db';
       //this.style.height='#3498db';
+      document.getElementById("teclea1").play();
     }
 
     function piezasobre(e){

@@ -84,6 +84,7 @@
 .tamaño_snake img {
     height: 150px;
     justify-content: center;
+    margin-top: 10px;
 }
 .modal_button {
     display: flex;
