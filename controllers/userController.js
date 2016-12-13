@@ -20,6 +20,7 @@ module.exports.login = function (req,res) {
   })
 }
 
+
 module.exports.register = function (req,res) {
   var params = req.body;
   models.User.create({
@@ -70,3 +71,10 @@ module.exports.snake_r1 = function (req,res) {
 module.exports.snake_r2 = function (req,res) {
   return res.render('snake_repetitivo2');
 };
+
+
+module.exports.principal = function (req,res) {
+  return res.render('snake_secuencial');
+};
+
+
