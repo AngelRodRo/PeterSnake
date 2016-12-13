@@ -270,7 +270,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #6f3098;
   background-color: #fff;
 }
 input,
@@ -280,6 +280,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  margin-right: 20px;
 }
 a {
   color: #1B242F;
@@ -356,11 +357,19 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: cursive;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
 }
+
+.h7 {
+  font-family: cursive;
+  font-weight: 500;
+  line-height: 1.1;
+  color: whitesmoke;
+}
+
 h1 small,
 h2 small,
 h3 small,
@@ -437,7 +446,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 30px;
 }
 h2,
 .h2 {
@@ -689,7 +698,7 @@ samp {
 code {
   padding: 2px 4px;
   font-size: 90%;
-  color: #c7254e;
+  color: 7254e;
   white-space: nowrap;
   background-color: #f9f2f4;
   border-radius: 4px;
@@ -1103,7 +1112,7 @@ pre code {
     width: 75%;
   }
   .col-md-8 {
-    width: 66.66666667%;
+    width: 100%;
   }
   
   .col-md-6 {
@@ -4253,18 +4262,21 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   cursor: not-allowed;
   background-color: #fff;
 }
+
 .label {
   display: inline;
   padding: .2em .6em .3em;
-  font-size: 75%;
+  font-size: x-large;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #633098;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
+  font-family: sans-serif;
 }
+
 .label[href]:hover,
 .label[href]:focus {
   color: #fff;
@@ -4274,7 +4286,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .label:empty {
   display: none;
 }
-.btn .label {
+.btn {
   position: relative;
   top: -1px;
 }

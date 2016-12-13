@@ -96,7 +96,7 @@ nav a#pull {
 }
 /*Styles for screen 600px and lower*/
 @media screen and (max-width: 768px) {
-	nav {
+	nav { 
   		height: auto;
   		float:none;
   	}
@@ -448,13 +448,24 @@ nav a#pull {
 .features-head h2 span{
 	color:#A10A0A;
 }
-.features-head p{
+
+/* .features-head p{
 	font-family: 'Droid Serif', serif;
 	color: darkslategrey;
 	font-size: 1.50em;
 	font-style: italic;
 	margin-top: 10px;
+} */
+
+
+.features-head p {
+    font-family: cursive;
+    color: darkslategrey;
+    font-size: x-large;
+    font-style: inherit;
+    margin-top: 10px;
 }
+
 .feature-grid h3{
 	color: #202020;
 	font-weight: 700;
@@ -468,10 +479,10 @@ nav a#pull {
 	vertical-align: top;
 }
 .feature-grid p{
-	color:#777777;
+	color:#000000;
 	font-size:1.20em;
 	margin:0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: cursive;
 }
 .feature-grid h3 span.fea-icon2{
 	background-position: -25px 0px;
@@ -497,12 +508,13 @@ nav a#pull {
 	font-size: 2.1em;
 	margin-bottom: 3%;
 		letter-spacing: 5px;
-	font-family: 'Oswald';
+	font-family: cursive;
 }
+
 .team-head span{
 	height:1px;
-	width:8%;
-	background:#FFF;
+	width:80%;
+	background:#3cadd4;
 	display:inline-block;
 }
 .team-grids{
@@ -518,12 +530,9 @@ nav a#pull {
     height:0px;
     width:100%;
     max-width:760px;
+    padding-top:56.25%;
     position:relative;
     float: right;
-}
-
-.video img{
-  width: 33em;
 }
 iframe{
     position:absolute;
@@ -810,7 +819,7 @@ span.default_line {
 }
 /*--footer--*/
 .footer{
-	background:#202020;
+	background:#ffffff;
 }
 
 ul.twitter_footer {
@@ -858,7 +867,7 @@ ul.twitter_footer li p {
 	font-size: 1em;
 	text-transform: uppercase;
 	font-weight: 400;
-	margin: 0 0 1em;
+	margin: 0 0 1em;	
 }
 .to input[type="text"] {
 	padding: 10px;
@@ -885,7 +894,7 @@ ul.twitter_footer li p {
 	font-size: 0.85em;
 	padding: 0.8em 4.8em 0.8em 2em;
 	text-transform: uppercase;
-	background: url(../images/submit_arrow.png)no-repeat 186px 13px #A10A0A;
+	background: url(../images/submit_arrow.png)no-repeat 186px 13px #3cadd4;
 	display: inline-block;
 	-webkit-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
@@ -915,8 +924,8 @@ ul.twitter_footer li p {
 	border:1px solid #444;
 }
 .contact-top_left h3 {
-	color: #FFF;
-	font-size: 1em;
+	color: #3cadd4;
+	font-size: 3em;
 	text-transform: uppercase;
 	font-weight:400;
 	margin: 0 0 5px;
@@ -960,7 +969,7 @@ ul.contact_info span.msg {
 }
 
 .footer-bottom{
-	background:url(../images/map.png)no-repeat 0 -25px;
+	/*background:url(../images/map.png)no-repeat 0 -25px; */
 	background-size:100% 100%;
 	border-top: 1px solid #333;
 	padding-top: 7%;
@@ -1188,6 +1197,7 @@ ul.twitter_footer li p {
 	text-align: justify;
 	color: azure;
 		font-size: 1.3em;
+		font-family: cursive;
 
 }
 
@@ -1208,8 +1218,9 @@ ul.twitter_footer li p {
 }
 #form__inicio{
 	width: 28%;
-	height: 60%;
-	background-color: #009688;
+	height: 65%;
+	/* background-color: #009688;  */
+	background-color: #a0b73d;
 	color: white;
 	margin-left: 30%;
 	margin-bottom: 40%;
@@ -1236,7 +1247,7 @@ ul.twitter_footer li p {
   margin-left: 2%;
   background: #fff;
 	float: left;
-  box-shadow: 0px 0px 3px grey;
+  box-shadow: 0px 0px 3px grey; 
 margin-bottom: 2%;}
 */
 
@@ -1264,33 +1275,46 @@ margin-top: 20px;}
       .contenedor-formulario .formulario .input-group input[type="text"],
       .contenedor-formulario .formulario .input-group input[type="email"],
       .contenedor-formulario .formulario .input-group input[type="password"] {
-        font-family: "Roboto";
+        font-family: serif;
         font-size: 1.8em;
         color: #FFFDE7;
         width: 100%;
         outline: none;
         padding: 15px;
         background: none;
-        border: none;
-        border-bottom: 2px solid #BBDEFB; }
+        border: ridge;
+
+        /*        border-bottom: 2px solid #BBDEFB;  */}
+
+
+        /*
         .contenedor-formulario .formulario .input-group input[type="text"]:focus, .contenedor-formulario .formulario .input-group input[type="text"]:active,
         .contenedor-formulario .formulario .input-group input[type="email"]:focus,
         .contenedor-formulario .formulario .input-group input[type="email"]:active,
         .contenedor-formulario .formulario .input-group input[type="password"]:focus,
         .contenedor-formulario .formulario .input-group input[type="password"]:active {
           outline: none;
-          border-bottom: 2px solid #303F9F; }
+          border-bottom: 2px solid #303F9F; }*/
+        /*
+          label active
         .contenedor-formulario .formulario .input-group input[type="text"].error,
         .contenedor-formulario .formulario .input-group input[type="email"].error,
         .contenedor-formulario .formulario .input-group input[type="password"].error {
           border-bottom: 4px  solid #303F9F; }
+*/          
+
+          /*
           .contenedor-formulario .formulario .input-group input[type="text"].error + label,
           .contenedor-formulario .formulario .input-group input[type="email"].error + label,
           .contenedor-formulario .formulario .input-group input[type="password"].error + label {
             color: #E3F2FD;
 			  letter-spacing: 2px;}
+
+
       .contenedor-formulario .formulario .input-group label {
-        color: #303F9F; }
+        color: #303F9F; }*/
+
+        /*
         .contenedor-formulario .formulario .input-group label.label {
           -webkit-transition: all 0.3s ease;
           -o-transition: all 0.3s ease;
@@ -1307,10 +1331,13 @@ margin-top: 20px;}
             font-size: 12px;
             line-height: 12px;
             color: #B6B6B6; }
+
+*/
+
       .contenedor-formulario .formulario .input-group.checkbox label, .contenedor-formulario .formulario .input-group.radio label {
         display: inline-block;
         cursor: pointer;
-        color: #303F9F;
+        color: #633098;
         position: relative;
         padding: 5px 15px 5px 51px;
         font-size: 1em;
@@ -1379,6 +1406,7 @@ margin-top: 20px;}
 	margin-bottom: 2%;
 }
 
+/*
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
@@ -1388,6 +1416,7 @@ margin-top: 20px;}
 			border-radius: 4px;
 			box-shadow: 0 0 0 1px #383b43;
 		}
+		*/
 
 .contenedor_contacto{
 	padding: 5%;
@@ -1413,7 +1442,7 @@ margin-top: 20px;}
     text-decoration: none;
     display: inline-block;
     font-size: 19px;
-
+   
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.5s;
@@ -1426,7 +1455,7 @@ margin-top: 20px;}
 
 .posicion
 {
-	float: center;
+	float: center; 
 }
 
 

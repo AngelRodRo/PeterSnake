@@ -343,7 +343,7 @@ $(document).on('ready', function() {
 				var pieceSiguiente=pieces[i+1]
 				var piecesInfor;
 				if(typeof pieceSiguiente != 'undefined')
-	      {
+				{
 
 					instructionSig=pieceSiguiente.dataset.instruction;
 
@@ -355,28 +355,68 @@ $(document).on('ready', function() {
 					{
 						//setTimeout(paint,i*1000,instructionSig);
 						piecesInfor=recogerPiezasInfor(pieces,piece);
+						var l=piecesInfor.length;
+						l=l*4;
 						console.log(piecesInfor);
 						ejecutarPiezasInfor(piecesInfor,i);
 						// setTimeout(function(){},i*2000);
 						// execInstruction(instructionSig);
 					}else if(piece.className.search('in-for') == -1){
 						console.log(piece.className);
-						setTimeout(paint,i*1000,instruction);
+						l=l+1;
+						ejecutarPieza(instruction,i);
 					}
 					console.log(piece.className);
 						array[i]=instruction;
 						console.log(array);
 				i++;
 		}
-		console.log(score);
-		setTimeout(mostrarModalsiperdio,i*1000,0);
+		console.log(i);
+
+		setTimeout(mostrarModalsiperdio,l*1000,array);
 
 	}
-	function mostrarModalsiperdio(nada){
+
+	function ejecutarPieza(instr,retraso){
+		setTimeout(paint,retraso*1000,instr);
+		return true;
+	}
+
+	function mostrarModalsiperdio(array){
+		var respuesta=['for','left','down'];
 		if (score==0) {
+			console.log(i);
+			aDie.play();
 			finestraModal2.classList.add("js-mostrar2");
 		}
+		else{
+				var error;
+				for (var i = array.length - 1; i >= 0; i--) {
+					console.log(array[i],respuesta[i]);
+					if (array[i]!=respuesta[i]) {
+						console.log(i);
+						error=1;
+					}
+				}
+				if (error==1) {
+					console.log(error);
+					aDie.play();
+					finestraModal2.classList.add("js-mostrar2");
+					return;
+				}
+				else{
+				console.log(error);
+				aEat.play();
+				emptyContainer();
+				finestraModal.classList.add("js-mostrar");
+				return;
+
+				}
+
+		}
+
 	}
+
 	function recogerPiezasInfor(pieces,pieceFor){
 		var piecesInFor=pieceFor.getElementsByClassName('piece');
 		for (var i = 0; i < piecesInFor.length; i++) {

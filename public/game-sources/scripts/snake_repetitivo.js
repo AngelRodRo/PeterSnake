@@ -370,13 +370,16 @@ $(document).on('ready', function() {
 					{
 						//setTimeout(paint,i*1000,instructionSig);
 						piecesInfor=recogerPiezasInfor(pieces,piece);
+						var l=piecesInfor.length;
+						l=l*4;
 						console.log(piecesInfor);
 						ejecutarPiezasInfor(piecesInfor,i);
 						// setTimeout(function(){},i*2000);
 						// execInstruction(instructionSig);
 					}else if(piece.className.search('in-for') == -1){
 						console.log(piece.className);
-						setTimeout(paint,i*1000,instruction);
+						l=l+1;
+						ejecutarPieza(instruction,i);
 					}
 					console.log(piece.className);
 						array[i]=instruction;
@@ -384,8 +387,14 @@ $(document).on('ready', function() {
 				i++;
 		}
 		console.log(i);
-		setTimeout(mostrarModalsiperdio,i*1000,array);
 
+		setTimeout(mostrarModalsiperdio,l*1000,array);
+
+	}
+
+	function ejecutarPieza(instr,retraso){
+		setTimeout(paint,retraso*1000,instr);
+		return true;
 	}
 
 	function mostrarModalsiperdio(array){
@@ -396,19 +405,22 @@ $(document).on('ready', function() {
 			finestraModal2.classList.add("js-mostrar2");
 		}
 		else{
+				var error;
 				for (var i = array.length - 1; i >= 0; i--) {
-					console.log(array[i],respuesta)
+					console.log(array[i],respuesta[i]);
 					if (array[i]!=respuesta[i]) {
 						console.log(i);
-						var error=1;
+						error=1;
 					}
 				}
-				if (error=1) {
+				if (error==1) {
+					console.log(error);
 					aDie.play();
 					finestraModal2.classList.add("js-mostrar2");
 					return;
 				}
 				else{
+				console.log(error);
 				aEat.play();
 				emptyContainer();
 				finestraModal.classList.add("js-mostrar");
