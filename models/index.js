@@ -6,9 +6,9 @@ var Sequelize = require("sequelize");
 var config    = require('../config/config.json')
 //var config    = require('../config/configv2')
 //var config    = require(path.join(__dirname, '..', 'config', 'config.json'))[env];
-var sequelize = new Sequelize(config.postgres.database, config.postgres.username, config.postgres.password,{
-dialect: config.postgres.dialect,
-host:config.postgres.host,
+var sequelize = new Sequelize(config.heroku.database, config.heroku.username, config.heroku.password,{
+dialect: config.heroku.dialect,
+host:config.heroku.host,
 define:{
   timestamps:false,
   freezeTableName:true
