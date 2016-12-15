@@ -19,6 +19,7 @@ $(document).on('ready', function() {
 	var height = $("#snake").height();
 	document.getElementById('color1').style.background='#000000';
 	document.getElementById('finestra-modal-obrir').style.display = 'none';
+	document.getElementById('noSonido').style.display = 'none';		
 	var arrayWall=[{x:1,y:5},{x:2,y:6},{x:3,y:7},{x:4,y:7},{x:5,y:7},{x:6,y:6},{x:5,y:5},{x:5,y:5},{x:4,y:5},{x:3,y:4}];
 
 	//Definimos algunas variables para configurar nuestro juego
@@ -281,18 +282,6 @@ $(document).on('ready', function() {
 	}
 
 
-	var btnReiniciar=$('#reiniciar');
-	btnReiniciar.click(reiniciarDenuevo);
-
-	function reiniciarDenuevo(){
-		//aDie.play();
-
-		//document.getElementById('compile').style.display = 'block';
-		init();
-
-		return;
-	}
-
 	var btnRepetir=$('#repetir');
 	btnRepetir.click(repetirDenuevo);
 
@@ -307,16 +296,7 @@ $(document).on('ready', function() {
 
 	function repetirDenuevo2(){
 		finestraModal2.classList.remove("js-mostrar2");
-		init();		
-
-	}
-
-	var btn_empezar=$('#empezar');
-	btn_empezar.click(EmpezarJuego);
-
-	function EmpezarJuego(){
-		finestraModal3.classList.remove("js-mostrar3");
-		init();
+		location.reload();	
 
 	}
 
@@ -333,7 +313,7 @@ $(document).on('ready', function() {
 
 	function Aspa2(){
 		finestraModal2.classList.remove("js-mostrar2");
-		init();				
+		location.reload();			
 	}
 
 	var btnaspa3=$('#finestra-modal-tancar3');
@@ -350,6 +330,28 @@ $(document).on('ready', function() {
 
 	function MostrarCodigo(){
 		finestraModal.classList.add("js-mostrar");
+	}
+
+	var btn_nosonido=$('#noSonido');
+	btn_nosonido.click(noSonido);
+
+	function noSonido(){
+
+		document.getElementById('noSonido').style.display = 'none';
+		document.getElementById('fondo').play();		
+		document.getElementById('Sonido').style.display = 'block';			
+		
+	}
+
+	var btnsonido=$('#Sonido');
+	btnsonido.click(Sonido);
+
+	function Sonido(){
+
+		document.getElementById('Sonido').style.display = 'none';
+		document.getElementById("fondo").pause();
+		document.getElementById('noSonido').style.display = 'block';			
+
 	}
 
 	var btnCompile=$('#compile');

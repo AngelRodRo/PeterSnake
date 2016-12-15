@@ -190,8 +190,8 @@ height: 1000px;
 
 .game-buttons{
   display: flex;
-  flex-direction: column;
-  height: 20vh;
+  flex-direction: column;  
+  margin-top: -150px;
 }
 
 button{
@@ -206,8 +206,7 @@ button{
 
 .btn-first{
   background-color: #2ecc71;
-  color: white;
-  position: absolute;
+  color: white;  
 }
 /*
 .btn-first:active{
@@ -337,3 +336,49 @@ section.wrapper {
                border: 5px solid red;
 
           }
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?waa63w');
+  src:  url('../fonts/icomoon.eot?waa63w#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?waa63w') format('truetype'),
+    url('../fonts/icomoon.woff?waa63w') format('woff'),
+    url('../fonts/icomoon.svg?waa63w#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 5px;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-volume-high:before {
+  content: "\ea26";
+  
+}
+.icon-volume-high:hover,.icon-volume-mute2:hover {
+  color: #82F900;
+}
+.icon-volume-mute2:before {
+  content: "\ea2a";  
+  margin-top: -55px;
+}
+
+.sonidoFondo {
+    text-align: center;
+    margin-bottom: 20px;
+}

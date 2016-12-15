@@ -74,8 +74,10 @@ block content
                   </font>
                   </div>
               .game-buttons
-                button#compile.btn-first(type='button', name='compile') COMPILAR
-                button#reiniciar.btn-third(type='button', name='compile') REINICIAR
+                .sonidoFondo
+                  span#Sonido.icon-volume-high
+                  span#noSonido.icon-volume-mute2
+                button#compile.btn-first(type='button', name='compile') COMPILAR                
                 button#empty.btn-second(type='button', name='empty') VACIAR CONTENEDORA
                 button#finestra-modal-obrir.btn-fourth(type='button', name='abrir') MOSTRAR CODIGO
               #piece-box.piece-box
@@ -84,10 +86,10 @@ block content
             font(color='Green', face='Comic Sans MS,arial', size='5')
               h2 JUEGO COMPLETADO
             font(color='Green', face='Comic Sans MS,arial', size='3')
-              h3 ¡FELICITACIONES! PASASTES EL SEXTO NIVEL!
+              h3 ¡FELICITACIONES! PASASTES EL NIVEL CONDICIONAL 2!
             font(color='Olive', face='Comic Sans MS,arial', size='2')
               p#modal-instructions.info_gamer
-                | Al colocar los bloques de este rompecabezas, has creado una serie de instrucciones en un lenguaje informático llamado JavaScript. Este código le dice al ordenador lo que debe mostrar en la pantalla.
+                | Al colocar los bloques de este rompecabezas, has creado una serie de instrucciones en un lenguaje informático llamado JavaScript. Este código le dice al ordenador lo que debe mostrar en la pantalla:
             .CodeInstruccion
               .ins
                 .codigo_snake
@@ -137,7 +139,7 @@ block content
                   button#repetir2.modal_button12 REPETIR
                   // <a href="./snake_nivel2.html"><button class="modal_button1">CONTINUAR</button></a>
                 #finestra-modal-tancar2.finestra-modal-tancar.boto2 ×
-                audio(src='./assets/fondo.mp3', autoplay='', loop='')
+                audio#fondo(src='./assets/fondo.mp3', autoplay='', loop='')
                 audio#teclea1(src='./assets/teclea1.wav')  
                 audio#teclea2(src='./assets/teclea2.wav') 
 
