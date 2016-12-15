@@ -449,7 +449,7 @@ $(document).on('ready', function() {
 		}
 
 
-			setTimeout(mostrarModalsiperdio,i*1000,0);
+			//setTimeout(mostrarModalsiperdio,i*1000,0);
 
 	}
 
