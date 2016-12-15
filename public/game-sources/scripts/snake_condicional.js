@@ -67,7 +67,7 @@ $(document).on('ready', function() {
 
 		createSnake();
 		createFood();
-//		score = 0;
+		score = 0;
 
 		/*if(typeof gameLoop != "undefined") {
 			clearInterval(gameLoop);
@@ -415,6 +415,7 @@ $(document).on('ready', function() {
 				var pieceSiguiente=pieces[i+1];
 				var piecesInfor;
 				var piecesInIf;
+				var l=0;
 				if(typeof pieceSiguiente != 'undefined')
 	      {
 					instructionSig=pieceSiguiente.dataset.instruction;
@@ -430,6 +431,8 @@ $(document).on('ready', function() {
 						piecesInfor=recogerPiezasInfor(pieces,piece);
 						console.log(piecesInfor);
 						ejecutarPiezasInfor(piecesInfor,i);
+						l=piecesInfor.length;
+						l=l*2;
 						// setTimeout(function(){},i*2000);
 						// execInstruction(instructionSig);
 					}else if(instruction == 'if'){
@@ -443,6 +446,7 @@ $(document).on('ready', function() {
 								{
 									console.log(piece.className.search('right'));
 									ejecutarPieza(instruction,i);
+									l++;
 								}
 
 
@@ -453,7 +457,7 @@ $(document).on('ready', function() {
 		}
 
 
-			setTimeout(mostrarModalsiperdio,i*1000,0);
+			//setTimeout(mostrarModalsiperdio,l*1000,0);
 
 	}
 

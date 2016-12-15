@@ -349,6 +349,7 @@ $(document).on('ready', function() {
 		var instructionSig;
 		var length=pieces.length;
 		var i=0;
+		var l=0;
 		var iFor=0;
 		var array=[];
 		console.log(length);
@@ -372,7 +373,7 @@ $(document).on('ready', function() {
 					{
 						//setTimeout(paint,i*1000,instructionSig);
 						piecesInfor=recogerPiezasInfor(pieces,piece);
-						var l=piecesInfor.length;
+						l=piecesInfor.length;
 						l=l*4;
 						console.log(piecesInfor);
 						ejecutarPiezasInfor(piecesInfor,i);
@@ -405,6 +406,7 @@ $(document).on('ready', function() {
 			console.log(i);
 			aDie.play();
 			finestraModal2.classList.add("js-mostrar2");
+			return;
 		}
 		else{
 				var error;
@@ -419,6 +421,7 @@ $(document).on('ready', function() {
 					console.log(error);
 					aDie.play();
 					finestraModal2.classList.add("js-mostrar2");
+					
 					return;
 				}
 				else{

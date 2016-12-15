@@ -61,7 +61,7 @@ $(document).on('ready', function() {
 
 		createSnake();
 		createFood();
-//		score = 0;
+		score = 0;
 
 		/*if(typeof gameLoop != "undefined") {
 			clearInterval(gameLoop);
@@ -472,7 +472,7 @@ $(document).on('ready', function() {
 		}
 
 
-			setTimeout(mostrarModalsiperdio,i*1000,0);
+			//setTimeout(mostrarModalsiperdio,i*1000,0);
 
 	}
 

@@ -15,7 +15,7 @@ $(document).on('ready', function() {
 	//Obtenemos el ancho y alto de nuestro canvas.
 	var width = $("#snake").width();
 	var height = $("#snake").height();
-	document.getElementById('color2').style.background='#000000';	
+	document.getElementById('color2').style.background='#000000';
 	document.getElementById('finestra-modal-obrir').style.display = 'none';
 	document.getElementById('noSonido').style.display = 'none';		
 	var arrayWall=[{x:6,y:8},{x:7,y:7},{x:7,y:6},{x:7,y:5},{x:6,y:4},{x:5,y:4},{x:4,y:3},{x:3,y:3},{x:2,y:3},
@@ -61,7 +61,7 @@ $(document).on('ready', function() {
 		d = "down";
 		createSnake();
 		createFood();
-		//score = 0;
+		score = 0;
 
 
 		/*if(typeof gameLoop != "undefined") {
@@ -368,7 +368,7 @@ $(document).on('ready', function() {
 		var array=[];
 		console.log(length);
 
-		for(var i = 0; i <= length; i++)
+		for(var i = 0; i < length; i++)
 		{
 
 				instruction=pieces[i].dataset.instruction;
@@ -386,8 +386,12 @@ $(document).on('ready', function() {
 
 	function mostrarModalsiperdio(nada){
 		if (score==0) {
+			console.log(score);
 			aDie.play();
 			finestraModal2.classList.add("js-mostrar2");
+			console.log(score);
+			emptyContainer();
+			return;
 		}
 	}
 
