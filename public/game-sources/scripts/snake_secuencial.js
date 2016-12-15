@@ -367,7 +367,7 @@ $(document).on('ready', function() {
 		var array=[];
 		console.log(length);
 
-		for(var i = 0; i <= length; i++)
+		for(var i = 0; i < length; i++)
 		{
 				console.log(pieces);
 				instruction=pieces[i].dataset.instruction;
@@ -386,6 +386,8 @@ $(document).on('ready', function() {
 		if (score==0) {
 			aDie.play();
 			finestraModal2.classList.add("js-mostrar2");
+			console.log(score);
+			emptyContainer();
 			return;
 		}
 	}
